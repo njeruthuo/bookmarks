@@ -44,6 +44,14 @@ class UserEditForm(forms.ModelForm):
         model = User
         fields = ['first_name', 'last_name', 'email']
 
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if User.objects.exclude(id=self.instance.id).filter(email=data).exists():
+            raise forms.ValidationError(
+                'A user with this email already exists!')
+
+        return data
+
 
 class ProfileEditForm(forms.ModelForm):
     class Meta:
