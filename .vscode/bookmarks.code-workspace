@@ -1,12 +1,8 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		},
-		{
-			"name": "dev",
-			"path": "../../bookmarks.worktrees/dev"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": ".."
+    }
+  ],
+  "settings": {}
 }
